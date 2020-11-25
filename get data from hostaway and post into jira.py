@@ -163,11 +163,6 @@ def pull_HA_push_jira_RD(jira_url,HA_token,HA_client_secret,HA_access_token,jira
         print(jira_payload_new)
         jira_response = requests.request("POST", jira_, headers=jira_headers, data = jira_payload_new)
         print(jira_response.text.encode('utf8'))
-        value=k['reservationId']
-
-        insert_qry = f'insert into reservation_new(reservation) values ("{value}")'
-        mycursor.execute(insert_qry)
-        mydb.commit()
 
 
 
